@@ -1,0 +1,184 @@
+html * {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: peru;
+  font-size: 18px;
+}
+
+.today-container {
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  gap: 1rem;
+}
+
+.task-description-border {
+  border: solid black 1px;
+  border-radius: 5px;
+  font-style: italic;
+}
+
+.task-description {
+  display: inline-block;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+.today-container div {
+  font-size: large;
+  font-weight: normal;
+  padding-left: 1rem;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.fa-input {
+  float: right;
+  margin-left: auto;
+  margin-right: 0.5rem;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.fa-btn {
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+}
+
+.fas {
+  color: gray;
+  float: right;
+}
+
+.add-task-container {
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  gap: 1rem;
+}
+
+.input-task {
+  font-size: 20px;
+  width: 370px;
+  border: none;
+}
+
+::placeholder {
+  color: gray;
+  font-size: 1rem;
+}
+
+.input-task:focus {
+  outline: none;
+}
+
+.container {
+  background-color: white;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 47%;
+  transform: translate(-30%, -30%);
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  padding-left: 0;
+  margin: 20rem 0;
+  width: 450px;
+  border-radius: 10px;
+}
+
+.item {
+  position: relative;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.list {
+  list-style: none;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.populated-list {
+  margin-left: -2.5rem;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+.clear-all {
+  text-align: center;
+}
+
+.clear-all a {
+  text-decoration: none;
+  color: black;
+  border: none;
+  font-size: larger;
+  font-weight: lighter;
+}
+
+.list .li-task {
+  border-bottom: 1px solid lightgray;
+  text-align: left;
+  padding: 2rem 1rem;
+}
+
+.list .li a {
+  float: right;
+}
+
+.task-box {
+  border: 3px solid gray;
+  margin-right: 2rem;
+}
+
+.trash {
+  visibility: hidden;
+}
+
+.trash-active {
+  display: block;
+  color: gray;
+}
+
+.trash-active:active {
+  transform: scale(1.5);
+  transition: 100ms ease;
+}
+
+#delete-to-do:active {
+  transform: rotate(720deg);
+  transition: 100ms ease;
+}
+
+.markActive {
+  background-color: bisque;
+}
+
+.clear {
+  background-color: lightgray;
+  border-bottom: none !important;
+}
+
+.remove {
+  margin-left: auto;
+  float: right;
+  background-color: transparent;
+  border: none;
+}
+
+.remove .fa {
+  color: gray;
+  cursor: pointer;
+}
+
+[contenteditable] {
+  outline: 0 solid transparent;
+  padding-right: 3%;
+  padding-right: 2%;
+}
