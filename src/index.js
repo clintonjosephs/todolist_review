@@ -8,11 +8,11 @@ import { markCompleted, clearCompleted } from './components/Completed.js';
 
 const listText = document.querySelector('.input-task');
 const addListBtn = document.querySelector('#add');
-const listContainer = document.querySelector('.list');
+const todosHolder = document.querySelector('.list');
 const clearList = document.querySelector('.clear');
 const localStorage = storageManager.getData();
 
-const ulManager = new UpdateUI(listContainer, localStorage);
+const ulManager = new UpdateUI(todosHolder, localStorage);
 const Method = new Methods();
 
 const component = () => {
@@ -39,19 +39,19 @@ const submitEnter = (e) => {
 addListBtn.addEventListener('click', addToList);
 listText.addEventListener('keyup', submitEnter);
 
-listContainer.addEventListener('click', (e) => {
+todosHolder.addEventListener('click', (e) => {
   if (e.target.tagName === 'LI') {
     const listId = e.target.id.replace('list-', '');
-    Method.markListForChanges(e.target, listId, listContainer);
+    Method.markListForChanges(e.target, listId, todosHolder);
   } else if (e.target.tagName === 'INPUT') {
     const checkbox = e.target;
     const { id } = e.target;
-    markCompleted(checkbox, id, listContainer);
+    markCompleted(checkbox, id, todosHolder);
   }
 });
 
 clearList.addEventListener('click', () => {
-  clearCompleted(listContainer);
+  clearCompleted(todosHolder);
 });
 
 document.body.appendChild(component());

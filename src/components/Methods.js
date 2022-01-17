@@ -6,7 +6,7 @@ export default class Methods {
   constructor(itemsToDelete = [], toogle = false) {
     this.itemsToDelete = itemsToDelete;
     this.toogle = toogle;
-    this.Listlength = storageManager.getData().length;
+    this.listLength = storageManager.getData().length;
   }
 
   markListForChanges = (li, id, listContainer) => {
@@ -14,7 +14,7 @@ export default class Methods {
     /* and goes ahead to add to the list */
 
     const storedDataLength = storageManager.getData().length;
-    if (this.Listlength < storedDataLength) {
+    if (this.listLength < storedDataLength) {
       this.itemsToDelete.length = 0;
     }
 
@@ -30,7 +30,7 @@ export default class Methods {
     } else {
       this.toogle = true;
       this.itemsToDelete.push(id);
-      this.Listlength = storageManager.getData().length;
+      this.listLength = storageManager.getData().length;
     }
 
     if (this.toogle) {
