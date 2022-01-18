@@ -47,7 +47,6 @@ export default class Methods {
       const sel = window.getSelection();
       sel.removeAllRanges();
       sel.addRange(range);
-
     } else {
       li.classList.remove('markActive');
       elipsis.classList.remove('trash');
