@@ -1,5 +1,5 @@
 import addDragEvent from './Dragdrop.js';
-import storageManager from './Storage.js';
+import StorageManager from './Storage.js';
 
 export default class UpdateUI {
   constructor(listElement, listObj) {
@@ -32,7 +32,7 @@ export default class UpdateUI {
   };
 
   refreshUI = () => {
-    this.todoList = storageManager.getData();
+    this.todoList = StorageManager.getData();
     while (this.showToDoElement.firstChild) {
       this.showToDoElement.removeChild(this.showToDoElement.firstChild);
     }

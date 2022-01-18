@@ -2,7 +2,7 @@ import _ from 'lodash';
 import './style.css';
 import UpdateUI from './components/UpdateUI.js';
 import Todolist from './components/Todolist.js';
-import storageManager from './components/Storage.js';
+import StorageManager from './components/Storage.js';
 import Methods from './components/Methods.js';
 import { markCompleted, clearCompleted } from './components/Completed.js';
 
@@ -10,7 +10,7 @@ const listText = document.querySelector('.input-task');
 const addListBtn = document.querySelector('#add');
 const todosHolder = document.querySelector('.list');
 const clearList = document.querySelector('.clear');
-const localStorage = storageManager.getData();
+const localStorage = StorageManager.getData();
 
 const ulManager = new UpdateUI(todosHolder, localStorage);
 const Method = new Methods();
@@ -29,7 +29,7 @@ const addToList = () => {
   }
 };
 
-const submitEnter = (e) => {
+const addToListWithEnterBtn = (e) => {
   if (e.keyCode === 13) {
     e.preventDefault();
     addToList();
@@ -37,7 +37,7 @@ const submitEnter = (e) => {
 };
 
 addListBtn.addEventListener('click', addToList);
-listText.addEventListener('keyup', submitEnter);
+listText.addEventListener('keyup', addToListWithEnterBtn);
 
 todosHolder.addEventListener('click', (e) => {
   if (e.target.tagName === 'LI') {
